@@ -12,9 +12,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/categoria")
+    @RequestMapping("/categoria")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 public class CategoriaControlador {
 
         private final CategoriaServicio categoriaServicio;

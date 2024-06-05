@@ -54,6 +54,7 @@ public class ServiciosControlador {
     @PutMapping("/{id}")
     public ResponseEntity<Servicios> actualizar(@PathVariable Long id , @RequestBody Servicios dto){
         try{
+            System.out.println("Ingresando al servicio");
             Servicios c = serviciosServicio.actualizar(id, dto);
             if(c != null) return new ResponseEntity<>(c, HttpStatus.OK);
             else return ResponseEntity.notFound().build();

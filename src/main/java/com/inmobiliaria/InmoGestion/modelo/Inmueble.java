@@ -1,6 +1,7 @@
 package com.inmobiliaria.InmoGestion.modelo;
 
 
+import com.inmobiliaria.InmoGestion.servicio.AmbientesServicio;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,6 @@ public class Inmueble {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private Integer ambientes;
     private String descripcion;
     private String direccion;
     private String ciudad;
@@ -31,13 +31,37 @@ public class Inmueble {
     @JoinColumn(name = "fk_categoria")
     private Categoria categoria;                       // casa - departamento / terreno - lote - chacra
 
-    @OneToMany
+    @ManyToMany
+    @JoinTable(
+            name = "inmueble_servicios",
+            joinColumns = @JoinColumn(name = "inmueble_id"),
+            inverseJoinColumns = @JoinColumn(name = "servicios_id")
+    )
     private List<Servicios> servicios;                 // Agua - Luz - Asfalto - Wifi - etc
-    @OneToMany
+
+    @ManyToMany
+    @JoinTable(
+            name = "inmueble_caracteristicas",
+            joinColumns = @JoinColumn(name = "inmueble_id"),
+            inverseJoinColumns = @JoinColumn(name = "caracteristicas_id")
+    )
     private List<Caracteristicas> caracteristicas;           // 2 dormitorios - 1 baño - cocina - comedor - living - lavadero - garage - piscina - patio - 2 depositos - canil para perros
+
+    @ManyToMany
+    @JoinTable(
+            name = "inmueble_ambientes",
+            joinColumns = @JoinColumn(name = "inmueble_id"),
+            inverseJoinColumns = @JoinColumn(name = "ambientes_id")
+    )
+    private List<Ambientes> ambientes;  // ---> SELECCION MULTIPLE []
+
+
     private BigDecimal precio;                      // mensual caso alquiler / contado precio compra
 
     @ElementCollection
-    private List<String> listaImagenes;
+    private List<String>    listaImagenes;
+
+    private Boolean esAlquiler;
+    private Boolean esVenta;
 
 }

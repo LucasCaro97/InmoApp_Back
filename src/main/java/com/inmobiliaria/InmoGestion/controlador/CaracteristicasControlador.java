@@ -25,6 +25,7 @@ public class CaracteristicasControlador {
         try{
             return ResponseEntity.ok(caracteristicasServicio.obtenerCaracteristicas());
         }catch (Exception e){
+            System.out.println(e.getStackTrace());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -44,6 +45,7 @@ public class CaracteristicasControlador {
             try{
                 return new ResponseEntity<>(caracteristicasServicio.crear(dto), HttpStatus.CREATED);
             }catch (Exception e){
+                System.out.println(e.getStackTrace());
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
     }
