@@ -64,4 +64,17 @@ public class Inmueble {
     private Boolean esAlquiler;
     private Boolean esVenta;
 
+    private BigDecimal precioAlquiler;
+    private BigDecimal precioVenta;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_propietario")
+    private Propietario propietario;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_estado_inmueble")
+    private EstadoInmueble estadoInmueble;
+
+
+
 }
