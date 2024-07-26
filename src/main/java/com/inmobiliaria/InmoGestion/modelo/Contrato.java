@@ -27,6 +27,9 @@ public class Contrato {
     @ManyToOne
     @JoinColumn(name = "fk_inmueble")
     private Inmueble inmueble;
+    @ManyToOne
+    @JoinColumn(name = "fk_estado_contrato")
+    private EstadoContrato estadoContrato;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private String observaciones;

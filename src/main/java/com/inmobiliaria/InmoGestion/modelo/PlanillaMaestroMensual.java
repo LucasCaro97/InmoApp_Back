@@ -18,9 +18,9 @@ public class PlanillaMaestroMensual {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Month mes;
-    private Year anio;
+    private Integer anio;
 
-    @OneToMany(mappedBy = "planillaMaestro  ", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "planillaMaestro", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PlanillaDetalleMensual> detalles;
 
 

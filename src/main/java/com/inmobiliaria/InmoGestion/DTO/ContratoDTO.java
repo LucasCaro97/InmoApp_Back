@@ -19,6 +19,7 @@ public class ContratoDTO {
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private String observaciones;
+    private Long estadoContrato;
 
 
 }
