@@ -15,6 +15,9 @@ public class EstadoContratoServicio {
 
     private final EstadoContratoRepositorio estadoContratoRepositorio;
 
+    /*
+    *   ORDEN DE GENERACION DE ESTADOS ( 1 EN TRAMITE , 2 EN CURSO, 3 RESCINDIDO )
+    * */
 
     @Transactional(readOnly = true)
     public EstadoContrato obtenerPorId(Long id){

@@ -61,6 +61,7 @@ public class ContratoServicio {
     }
 
 
+    public List<Contrato> findByEstado(Long id) {
 
-
+    }
 }

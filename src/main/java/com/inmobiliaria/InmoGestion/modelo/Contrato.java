@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -33,6 +34,7 @@ public class Contrato {
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private String observaciones;
+    private BigDecimal importeBase;
 
 
 
