@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.List;
 
 @Service
@@ -16,10 +17,10 @@ public class PlanillaMaestroMensualServicio {
     private final PlanillaMaestroMensualRepositorio planillaMaestroRepo;
 
     @Transactional
-    public PlanillaMaestroMensual crearPlanillaMaestro(){
+    public PlanillaMaestroMensual crearPlanillaMaestro(Month mes, Integer year){
         PlanillaMaestroMensual planillaMaestroMensual = new PlanillaMaestroMensual();
-        planillaMaestroMensual.setMes(LocalDate.now().getMonth());
-        planillaMaestroMensual.setAnio(LocalDate.now().getYear());
+        planillaMaestroMensual.setMes(mes);
+        planillaMaestroMensual.setAnio(year);
         return planillaMaestroRepo.save(planillaMaestroMensual);
     }
 

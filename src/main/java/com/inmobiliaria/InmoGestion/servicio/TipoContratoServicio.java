@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -26,19 +27,34 @@ public class TipoContratoServicio {
 
     @Transactional
     public TipoContrato crearTipoContrado(TipoContrato tipoContratoDTO){
-        TipoContrato tipoContrato = new TipoContrato();
-        tipoContrato.setNombre(tipoContratoDTO.getNombre());
-        return tipoContratoRepositorio.save(tipoContrato);
+        try{
+            TipoContrato tipoContrato = new TipoContrato();
+            tipoContrato.setNombre(tipoContratoDTO.getNombre());
+            return tipoContratoRepositorio.save(tipoContrato);
+        }catch (Exception e){
+            throw new RuntimeException("Error al crear el registro");
+        }
     }
 
     public TipoContrato actualizarTipoContrato(Long id, TipoContrato tipoContratoDTO){
-        TipoContrato tipoContrato = this.obtenerPorId(id);
-        tipoContrato.setNombre(tipoContratoDTO.getNombre());
-        return tipoContratoRepositorio.save(tipoContrato);
+        try{
+            TipoContrato tipoContrato = this.obtenerPorId(id);
+            tipoContrato.setNombre(tipoContratoDTO.getNombre());
+            return tipoContratoRepositorio.save(tipoContrato);
+        }catch (Exception e){
+            throw new RuntimeException("Error al actualizar el registro");
+        }
     }
 
     @Transactional
-    public void eliminarPorId(Long id){
-        tipoContratoRepositorio.deleteById(id);
+    public HashMap<String, String> eliminarPorId(Long id){
+        try{
+            HashMap<String, String> respuesta = new HashMap<>();
+            respuesta.put("mensaje", "Registro eliminado correctamente");
+            tipoContratoRepositorio.deleteById(id);
+            return respuesta;
+        }catch (Exception e){
+            throw new RuntimeException("Error al eliminar el registro");
+        }
     }
 }

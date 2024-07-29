@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -15,6 +16,9 @@ public class EstadoContratoServicio {
 
     private final EstadoContratoRepositorio estadoContratoRepositorio;
 
+    /*
+    *   ORDEN DE GENERACION DE ESTADOS ( 1 EN TRAMITE , 2 EN CURSO, 3 RESCINDIDO )
+    * */
 
     @Transactional(readOnly = true)
     public EstadoContrato obtenerPorId(Long id){
@@ -28,24 +32,36 @@ public class EstadoContratoServicio {
 
     @Transactional
     public EstadoContrato crearEstado(EstadoContrato estadoContratoDTO){
-        EstadoContrato estadoContrato = new EstadoContrato();
-        estadoContrato.setNombre(estadoContratoDTO.getNombre());
-        return estadoContratoRepositorio.save(estadoContrato);
+        try{
+            EstadoContrato estadoContrato = new EstadoContrato();
+            estadoContrato.setNombre(estadoContratoDTO.getNombre());
+            return estadoContratoRepositorio.save(estadoContrato);
+        }catch (Exception e){
+            throw  new RuntimeException("Error al crear el registro");
+        }
     }
 
     @Transactional()
     public EstadoContrato actualizarEstado(Long id, EstadoContrato estadoContratoDTO){
-        EstadoContrato estadoContrato = this.obtenerPorId(id);
-        estadoContrato.setNombre(estadoContratoDTO.getNombre());
-        return estadoContratoRepositorio.save(estadoContrato);
+        try{
+            EstadoContrato estadoContrato = this.obtenerPorId(id);
+            estadoContrato.setNombre(estadoContratoDTO.getNombre());
+            return estadoContratoRepositorio.save(estadoContrato);
+        }catch (Exception e) {
+            throw new RuntimeException("Error al actualizar el registro");
+        }
     }
 
     @Transactional
-    public void eliminarEstado(Long id){
-        /*
-        * Validar la eliminacion de cada estado ---> Si existen cotratos con dicho estado que no se pueda
-        * */
-        estadoContratoRepositorio.deleteById(id);
+    public HashMap<String, String> eliminarEstado(Long id){
+        try{
+            HashMap<String, String> respuesta = new HashMap<>();
+            respuesta.put("mensaje", "Registro eliminado correctamente");
+            estadoContratoRepositorio.deleteById(id);
+            return respuesta;
+        }catch (Exception e){
+            throw new RuntimeException("Error al eliminar el registro");
+        }
     }
 
 

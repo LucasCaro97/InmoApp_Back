@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Getter
@@ -20,6 +21,8 @@ public class ContratoDTO {
     private LocalDate fechaFin;
     private String observaciones;
     private Long estadoContrato;
-
+    private BigDecimal importeBase;
+    private Long indice;
+    private Integer actualizaCada;
 
 }
