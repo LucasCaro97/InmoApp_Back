@@ -1,40 +1,80 @@
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\ServiciosRepositorio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\InmuebleDTO.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\InmuebleControlador.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\ServiciosControlador.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\RegisterRequest.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\InmoGestionApplication.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\CaracteristicasControlador.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Jwt\JwtAuthenticationFilter.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\AmbientesServicio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\AmbienteControlador.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Usuario.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\ServiciosServicio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\LoginRequest.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\CaracteristicasRepositorio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Config\AplicationConfig.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Categoria.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Caracteristicas.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Inmueble.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Jwt\JwtService.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Config\ImgConfig.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Config\SecurityConfig.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Rol.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\CaracteristicasServicio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\CategoriaRepositorio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\CategoriaServicio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\TipoOperacionRepositorio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\TipoOperacionServicio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\UsuarioRepositorio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\TipoOperacionControlador.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\InmuebleServicio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\AuthService.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\TipoOperacion.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\AuthResponse.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Ambientes.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\ImagenServicio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Servicios.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\AuthController.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\AmbientesRepositorio.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\CategoriaControlador.java
-C:\Users\nazar\OneDrive\Escritorio\inmobiliaria\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\InmuebleRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\InquilinoRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\ImagenServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\ArquilerResponse.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Jwt\JwtService.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Config\SecurityConfig.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\ContratoRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\EstadoInmuebleServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\TipoContratoServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\InmuebleServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Jwt\JwtAuthenticationFilter.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\SimplifiedArquilerDetalleDTO.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\EstadoInmuebleRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\EstadoContratoServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\InmuebleControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\CaracteristicasServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\EstadoInmuebleControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\AuthResponse.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\AuthService.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\IndiceICLDTO.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Indice.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\TipoOperacionRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\ServiciosServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\EstadoContratoRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\InquilinoServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\DetailsDTO.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\IndiceServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\InquilinoControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Config\ImgConfig.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\EstadoContratoControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\PropietarioControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\EstadoContrato.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\AmbientesServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\RegisterRequest.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\ContratoControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\InmoGestionApplication.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\EstadoInmueble.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Usuario.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\ContratoServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\TipoContratoControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Servicios.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\InmuebleDTO.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\AmbientesRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\ServiciosControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Ambientes.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\LoginRequest.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\CaracteristicasControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\ArquilerDetalleDTO.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\PlanillaMaestroMensual.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\TipoContrato.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\TipoOperacion.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\CaracteristicasRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\AuthController.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\PropietarioServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\PlanillaDetalleMensual.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\IndiceRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\InmuebleRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Inquilino.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\ServiciosRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\CategoriaRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\UsuarioRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Inmueble.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\PlanillaMaestroMensualServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\PropietarioRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\TipoContratoRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Contrato.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\PlanillaMaestroMensualRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\IndiceControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\TipoOperacionControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\TipoOperacionServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\ContratoDTO.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Config\AplicationConfig.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\CategoriaControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Categoria.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\PlanillaDetalleMensualServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\PlanillaDetalleMensualRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\CategoriaServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Rol.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Caracteristicas.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\AmbienteControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Propietario.java

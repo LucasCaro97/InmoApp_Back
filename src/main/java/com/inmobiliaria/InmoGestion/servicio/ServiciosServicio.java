@@ -56,7 +56,7 @@ public class ServiciosServicio {
     public HashMap<String, String> eliminarPorId(Long id){
         try {
             HashMap<String, String> respuesta = new HashMap<>();
-            respuesta.put("mensaje", "Se ha eliminardo correctamente el registro");
+            respuesta.put("mensaje", "Se ha eliminado correctamente el registro");
             serviciosRepositorio.deleteById(id);
             return  respuesta;
         }catch (Exception e){
