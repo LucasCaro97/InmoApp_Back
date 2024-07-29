@@ -35,6 +35,10 @@ public class Contrato {
     private LocalDate fechaFin;
     private String observaciones;
     private BigDecimal importeBase;
+    private Integer actualizaCada;
+    @ManyToOne
+    @JoinColumn(name = "fk_indice")
+    private Indice indice;
 
 
 

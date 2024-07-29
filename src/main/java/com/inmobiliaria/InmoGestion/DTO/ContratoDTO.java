@@ -22,6 +22,7 @@ public class ContratoDTO {
     private String observaciones;
     private Long estadoContrato;
     private BigDecimal importeBase;
-
+    private Long indice;
+    private Integer actualizaCada;
 
 }

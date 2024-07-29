@@ -1,5 +1,6 @@
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\InquilinoRepositorio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\ImagenServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\ArquilerResponse.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Jwt\JwtService.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Config\SecurityConfig.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\ContratoRepositorio.java
@@ -8,6 +9,7 @@ C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGesti
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\TipoContratoServicio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\InmuebleServicio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Jwt\JwtAuthenticationFilter.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\SimplifiedArquilerDetalleDTO.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\EstadoInmuebleRepositorio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\EstadoContratoServicio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\InmuebleControlador.java
@@ -20,6 +22,7 @@ C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGesti
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\ServiciosServicio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\EstadoContratoRepositorio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\InquilinoServicio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\DetailsDTO.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\InquilinoControlador.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Config\ImgConfig.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\EstadoContratoControlador.java
@@ -29,6 +32,7 @@ C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGesti
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\IndiceICL.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\IndiceIPC.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\RegisterRequest.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\ContratoControlador.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\InmoGestionApplication.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\EstadoInmueble.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\IndiceCasaPropia.java
@@ -39,9 +43,12 @@ C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGesti
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\InmuebleDTO.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\AmbientesRepositorio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\ServiciosControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\IndiceICLControlador.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Ambientes.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\IndiceIPCServicio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\LoginRequest.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\CaracteristicasControlador.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\ArquilerDetalleDTO.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\PlanillaMaestroMensual.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\TipoContrato.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\TipoOperacion.java
@@ -54,6 +61,7 @@ C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGesti
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\IndiceICLServicio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\ServiciosRepositorio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\IndiceICLRepositorio.java
+C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\IndiceCasaPropiaServicio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\CategoriaRepositorio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\UsuarioRepositorio.java
 C:\Users\FLIA CARO\Desktop\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Inmueble.java

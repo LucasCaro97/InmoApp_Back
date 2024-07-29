@@ -1,7 +1,9 @@
 com\inmobiliaria\InmoGestion\modelo\IndiceICL.class
 com\inmobiliaria\InmoGestion\DTO\IndiceICLDTO.class
+com\inmobiliaria\InmoGestion\controlador\IndiceICLControlador.class
 com\inmobiliaria\InmoGestion\Jwt\JwtAuthenticationFilter.class
 com\inmobiliaria\InmoGestion\repositorio\InquilinoRepositorio.class
+com\inmobiliaria\InmoGestion\DTO\SimplifiedArquilerDetalleDTO.class
 com\inmobiliaria\InmoGestion\repositorio\ServiciosRepositorio.class
 com\inmobiliaria\InmoGestion\controlador\PropietarioControlador.class
 com\inmobiliaria\InmoGestion\modelo\EstadoInmueble.class
@@ -9,6 +11,7 @@ com\inmobiliaria\InmoGestion\repositorio\EstadoInmuebleRepositorio.class
 com\inmobiliaria\InmoGestion\repositorio\ContratoRepositorio.class
 com\inmobiliaria\InmoGestion\DTO\ContratoDTO.class
 com\inmobiliaria\InmoGestion\controlador\InmuebleControlador.class
+com\inmobiliaria\InmoGestion\DTO\ArquilerResponse.class
 com\inmobiliaria\InmoGestion\servicio\AmbientesServicio.class
 com\inmobiliaria\InmoGestion\servicio\TipoOperacionServicio.class
 com\inmobiliaria\InmoGestion\repositorio\IndiceIPCRepositorio.class
@@ -26,6 +29,7 @@ com\inmobiliaria\InmoGestion\servicio\TipoContratoServicio.class
 com\inmobiliaria\InmoGestion\Jwt\JwtService.class
 com\inmobiliaria\InmoGestion\repositorio\TipoOperacionRepositorio.class
 com\inmobiliaria\InmoGestion\servicio\CategoriaServicio.class
+com\inmobiliaria\InmoGestion\DTO\ArquilerDetalleDTO.class
 com\inmobiliaria\InmoGestion\repositorio\PropietarioRepositorio.class
 com\inmobiliaria\InmoGestion\Config\ImgConfig.class
 com\inmobiliaria\InmoGestion\modelo\Servicios.class
@@ -42,12 +46,15 @@ com\inmobiliaria\InmoGestion\repositorio\AmbientesRepositorio.class
 com\inmobiliaria\InmoGestion\Auth\AuthResponse$AuthResponseBuilder.class
 com\inmobiliaria\InmoGestion\Config\SecurityConfig.class
 com\inmobiliaria\InmoGestion\repositorio\PlanillaMaestroMensualRepositorio.class
+com\inmobiliaria\InmoGestion\controlador\ContratoControlador.class
+com\inmobiliaria\InmoGestion\servicio\IndiceCasaPropiaServicio.class
 com\inmobiliaria\InmoGestion\modelo\Caracteristicas.class
 com\inmobiliaria\InmoGestion\repositorio\UsuarioRepositorio.class
 com\inmobiliaria\InmoGestion\repositorio\InmuebleRepositorio.class
 com\inmobiliaria\InmoGestion\servicio\PropietarioServicio.class
 com\inmobiliaria\InmoGestion\Auth\RegisterRequest$RegisterRequestBuilder.class
 com\inmobiliaria\InmoGestion\modelo\TipoContrato.class
+com\inmobiliaria\InmoGestion\DTO\DetailsDTO.class
 com\inmobiliaria\InmoGestion\modelo\IndiceCasaPropia.class
 com\inmobiliaria\InmoGestion\controlador\EstadoInmuebleControlador.class
 com\inmobiliaria\InmoGestion\modelo\Rol.class
@@ -74,6 +81,7 @@ com\inmobiliaria\InmoGestion\InmoGestionApplication.class
 com\inmobiliaria\InmoGestion\Auth\RegisterRequest.class
 com\inmobiliaria\InmoGestion\controlador\TipoContratoControlador.class
 com\inmobiliaria\InmoGestion\modelo\PlanillaMaestroMensual.class
+com\inmobiliaria\InmoGestion\servicio\IndiceIPCServicio.class
 com\inmobiliaria\InmoGestion\modelo\PlanillaDetalleMensual.class
 com\inmobiliaria\InmoGestion\modelo\Ambientes.class
 com\inmobiliaria\InmoGestion\controlador\AmbienteControlador.class
