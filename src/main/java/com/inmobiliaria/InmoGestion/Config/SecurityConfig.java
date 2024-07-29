@@ -36,7 +36,6 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.GET, "/inmueble").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/inmueble/{id}").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/images/**").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/contrato").permitAll()
                                 .anyRequest().authenticated()
                 ).
                 cors(cors -> cors.configurationSource(corsConfigurationSource()))
@@ -45,8 +44,7 @@ public class SecurityConfig {
                                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authProvider)
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .build()
-                ;
+                .build();
 
     }
 
