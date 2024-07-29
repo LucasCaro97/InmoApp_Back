@@ -32,6 +32,9 @@ public class PlanillaDetalleMensualServicio {
 //            *       Valor Nuevo = [ Valor inicial del Contrato ] * ( [ Valor del índice actual ] / [ Valor del índice al inicio contrato ] )
 //            *       NuevoImporte = precioBase * ( indiceActual / indiceBase ) indiceBase = indice estipulado en el inicio del contrato
 //            */
+                /*
+                 *   API PARA CONSULTAR AL BCRA LOS INDICES DE ICL ---> api.bcra.gob.ar/estadisticas/v2.0/datosvariable/40/2023-08-01/2023-08-02
+                 * */
 //        }
 //
 //        }

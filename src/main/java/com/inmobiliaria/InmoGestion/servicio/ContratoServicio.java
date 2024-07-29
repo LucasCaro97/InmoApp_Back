@@ -20,6 +20,10 @@ public class ContratoServicio {
     private final TipoContratoServicio tipoContratoServicio;
     private final EstadoContratoServicio estadoContratoServicio;
 
+
+
+
+
     @Transactional
     public Contrato crearContrato(ContratoDTO contratoDTO){
         Inmueble inmueble = inmuebleServicio.obtenerPorId(contratoDTO.getInmuebleId()).orElse(null);
@@ -61,7 +65,7 @@ public class ContratoServicio {
     }
 
 
-    public List<Contrato> findByEstado(Long id) {
-
-    }
+//    public List<Contrato> findByEstado(Long id) {
+//
+//    }
 }
