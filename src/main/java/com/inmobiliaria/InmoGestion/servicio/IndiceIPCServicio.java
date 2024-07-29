@@ -1,7 +1,7 @@
 package com.inmobiliaria.InmoGestion.servicio;
 
-import com.inmobiliaria.InmoGestion.modelo.IndiceICL;
-import com.inmobiliaria.InmoGestion.repositorio.IndiceICLRepositorio;
+import com.inmobiliaria.InmoGestion.modelo.IndiceIPC;
+import com.inmobiliaria.InmoGestion.repositorio.IndiceIPCRepositorio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,39 +11,40 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class IndiceICLServicio {
+public class IndiceIPCServicio {
 
-    private final IndiceICLRepositorio indiceICLRepositorio;
+    private final IndiceIPCRepositorio indiceIPCRepositorio;
+
 
     @Transactional(readOnly = true)
-    public IndiceICL obtenerPorId(Long id){
-        return indiceICLRepositorio.findById(id).orElseGet(null);
+    public IndiceIPC obtenerPorId(Long id){
+        return indiceIPCRepositorio.findById(id).orElseGet(null);
     }
 
     @Transactional(readOnly = true)
-    public List<IndiceICL> obtenerTodos(){
-        return indiceICLRepositorio.findAll();
+    public List<IndiceIPC> obtenerTodos(){
+        return indiceIPCRepositorio.findAll();
     }
 
     @Transactional
-    public IndiceICL crearIndice(IndiceICL indiceICLDTO){
+    public IndiceIPC crearIndice(IndiceIPC indiceIPCDTO){
         try{
-            IndiceICL indiceICL = new IndiceICL();
-            indiceICL.setFecha(indiceICLDTO.getFecha());
-            indiceICL.setValor(indiceICLDTO.getValor());
-            return indiceICLRepositorio.save(indiceICL);
+            IndiceIPC indiceIPC = new IndiceIPC();
+            indiceIPC.setFecha(indiceIPCDTO.getFecha());
+            indiceIPC.setValor(indiceIPCDTO.getValor());
+            return indiceIPCRepositorio.save(indiceIPC);
         }catch (Exception e){
             throw new RuntimeException("Error al crear el registro");
         }
     }
 
     @Transactional
-    public IndiceICL actualizarPorId(Long id, IndiceICL indiceICLDTO){
+    public IndiceIPC actualizarPorId(Long id, IndiceIPC indiceIPCDTO){
         try{
-            IndiceICL indiceICL = this.obtenerPorId(id);
-            indiceICL.setFecha(indiceICLDTO.getFecha());
-            indiceICL.setValor(indiceICL.getValor());
-            return indiceICLRepositorio.save(indiceICL);
+            IndiceIPC indiceIPC = this.obtenerPorId(id);
+            indiceIPC.setFecha(indiceIPCDTO.getFecha());
+            indiceIPC.setValor(indiceIPCDTO.getValor());
+            return indiceIPCRepositorio.save(indiceIPC);
         }catch (Exception e){
             throw new RuntimeException("Error al actualizar el registro");
         }
@@ -54,13 +55,12 @@ public class IndiceICLServicio {
         try{
             HashMap<String , String> respuesta = new HashMap<>();
             respuesta.put("mensaje", "Registro eliminado correctamente");
-            indiceICLRepositorio.deleteById(id);
+            indiceIPCRepositorio.deleteById(id);
             return respuesta;
         }catch (Exception e){
             throw new RuntimeException("Error al eliminar el registro");
         }
     }
-
 
 
 }
