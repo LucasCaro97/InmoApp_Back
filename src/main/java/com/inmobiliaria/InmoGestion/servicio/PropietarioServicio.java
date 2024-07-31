@@ -63,7 +63,7 @@ public class PropietarioServicio {
     public HashMap<String, String> eliminarPorId(Long id){
         try{
             HashMap<String, String> respuesta = new HashMap<>();
-            respuesta.put("mensaje", "Registro elimado correctamente");
+            respuesta.put("mensaje", "Registro eliminado correctamente");
             propietarioRepositorio.deleteById(id);
             return respuesta;
         }catch (Exception e){
