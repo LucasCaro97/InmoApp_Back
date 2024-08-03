@@ -60,6 +60,7 @@ public class PlanillaDetalleMensualServicio {
                 LocalDate fechaPeriodo = LocalDate.parse(item.getDate());
                 LocalDate fechaActual = LocalDate.now();
 
+                //VERIFICAR Y AFINAR PRECICION DE CONDICION DE FECHAS. --> SI EL MES ES IGUAL AL NUEVO PERIODO, TOMAR NUEVO VALOR
                 if (fechaActual.isAfter(fechaPeriodo)) {
                     itemRetorno = item;
                 }
