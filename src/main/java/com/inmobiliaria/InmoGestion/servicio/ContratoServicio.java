@@ -2,12 +2,14 @@ package com.inmobiliaria.InmoGestion.servicio;
 
 import com.inmobiliaria.InmoGestion.DTO.ContratoDTO;
 import com.inmobiliaria.InmoGestion.modelo.Contrato;
+import com.inmobiliaria.InmoGestion.modelo.EstadoContrato;
 import com.inmobiliaria.InmoGestion.modelo.Inmueble;
 import com.inmobiliaria.InmoGestion.repositorio.ContratoRepositorio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 
@@ -24,19 +26,24 @@ public class ContratoServicio {
 
     @Transactional
     public Contrato crearContrato(ContratoDTO contratoDTO){
-        Inmueble inmueble = inmuebleServicio.obtenerPorId(contratoDTO.getInmuebleId()).orElse(null);
-        Contrato contrato = new Contrato();
-        contrato.setInmueble(inmueble);
-        contrato.setInquilino(inquilinoServicio.obtenerPorId(contratoDTO.getInquilinoId()));
-        contrato.setPropietario(inmueble.getPropietario());
-        contrato.setTipoContrato(tipoContratoServicio.obtenerPorId(contratoDTO.getTipoContratoId()));
-        contrato.setFechaInicio(contratoDTO.getFechaInicio());
-        contrato.setFechaFin(contratoDTO.getFechaFin());
-        contrato.setObservaciones(contratoDTO.getObservaciones());
-        contrato.setEstadoContrato(estadoContratoServicio.obtenerPorId(contratoDTO.getEstadoContrato()));
-        contrato.setIndice(indiceServicio.obtenerPorId(contratoDTO.getIndice()));
-        contrato.setActualizaCada(contratoDTO.getActualizaCada());
-        return contratoRepositorio.save(contrato);
+        try{
+            Inmueble inmueble = inmuebleServicio.obtenerPorId(contratoDTO.getInmuebleId()).orElse(null);
+            Contrato contrato = new Contrato();
+            contrato.setInmueble(inmueble);
+            contrato.setInquilino(inquilinoServicio.obtenerPorId(contratoDTO.getInquilinoId()));
+            contrato.setPropietario(inmueble.getPropietario());
+            contrato.setTipoContrato(tipoContratoServicio.obtenerPorId(contratoDTO.getTipoContratoId()));
+            contrato.setFechaInicio(LocalDate.parse(contratoDTO.getFechaInicio()));
+            contrato.setFechaFin(LocalDate.parse(contratoDTO.getFechaFin()));
+            contrato.setObservaciones(contratoDTO.getObservaciones());
+            contrato.setEstadoContrato(estadoContratoServicio.obtenerPorId(contratoDTO.getEstadoContrato()));
+            contrato.setIndice(indiceServicio.obtenerPorId(contratoDTO.getIndice()));
+            contrato.setActualizaCada(contratoDTO.getActualizaCada());
+            contrato.setImporteBase(contratoDTO.getImporteBase());
+            return contratoRepositorio.save(contrato);
+        }catch (Exception e){
+            throw new RuntimeException("Error al crear el contrato");
+        }
     }
 
     @Transactional(readOnly = true)
@@ -57,8 +64,8 @@ public class ContratoServicio {
         contrato.setInquilino(inquilinoServicio.obtenerPorId(contratoDTO.getInquilinoId()));
         contrato.setPropietario(inmueble.getPropietario());
         contrato.setTipoContrato(tipoContratoServicio.obtenerPorId(contratoDTO.getTipoContratoId()));
-        contrato.setFechaInicio(contratoDTO.getFechaInicio());
-        contrato.setFechaFin(contratoDTO.getFechaFin());
+        contrato.setFechaInicio(LocalDate.parse(contratoDTO.getFechaInicio()));
+        contrato.setFechaFin(LocalDate.parse(contratoDTO.getFechaFin()));
         contrato.setObservaciones(contratoDTO.getObservaciones());
         contrato.setEstadoContrato(estadoContratoServicio.obtenerPorId(contratoDTO.getEstadoContrato()));
         contrato.setIndice(indiceServicio.obtenerPorId(contratoDTO.getIndice()));
@@ -78,8 +85,12 @@ public class ContratoServicio {
         }
     }
 
-
-//    public List<Contrato> findByEstado(Long id) {
-//
-//    }
+    @Transactional(readOnly = true)
+    public List<Contrato> findByEstadoActivo() {
+        try{
+            return contratoRepositorio.findByEstadoActivo(1l);
+        }catch (Exception e){
+            throw new RuntimeException("Error al buscar el contrato por estado");
+        }
+    }
 }
