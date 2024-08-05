@@ -1,5 +1,6 @@
 package com.inmobiliaria.InmoGestion.modelo;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class PlanillaDetalleMensual {
 
         @ManyToOne
         @JoinColumn(name = "fk_maestro")
+        @JsonBackReference
         private PlanillaMaestroMensual planillaMaestro;
         @ManyToOne
         @JoinColumn(name = "fk_contrato")

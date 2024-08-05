@@ -1,5 +1,6 @@
 package com.inmobiliaria.InmoGestion.servicio;
 
+import com.inmobiliaria.InmoGestion.modelo.PlanillaDetalleMensual;
 import com.inmobiliaria.InmoGestion.modelo.PlanillaMaestroMensual;
 import com.inmobiliaria.InmoGestion.repositorio.PlanillaMaestroMensualRepositorio;
 import lombok.RequiredArgsConstructor;
@@ -15,13 +16,17 @@ public class PlanillaMaestroMensualServicio {
 
 
     private final PlanillaMaestroMensualRepositorio planillaMaestroRepo;
+    private final PlanillaDetalleMensualServicio planillaDetalleMensualServicio;
+
 
     @Transactional
-    public PlanillaMaestroMensual crearPlanillaMaestro(Month mes, Integer year){
+    public PlanillaMaestroMensual crearPlanillaMaestro(Integer mes, Integer year){
         PlanillaMaestroMensual planillaMaestroMensual = new PlanillaMaestroMensual();
         planillaMaestroMensual.setMes(mes);
         planillaMaestroMensual.setAnio(year);
-        return planillaMaestroRepo.save(planillaMaestroMensual);
+        PlanillaMaestroMensual planillaMaestro = planillaMaestroRepo.save(planillaMaestroMensual);
+        planillaDetalleMensualServicio.crearDetallesMensual(planillaMaestro);
+        return planillaMaestro;
     }
 
     @Transactional

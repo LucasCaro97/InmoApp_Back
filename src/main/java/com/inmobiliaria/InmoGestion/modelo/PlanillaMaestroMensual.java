@@ -1,5 +1,6 @@
 package com.inmobiliaria.InmoGestion.modelo;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,10 +18,11 @@ public class PlanillaMaestroMensual {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Month mes;
+    private Integer mes;
     private Integer anio;
 
     @OneToMany(mappedBy = "planillaMaestro", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<PlanillaDetalleMensual> detalles;
 
 

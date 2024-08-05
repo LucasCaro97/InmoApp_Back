@@ -6,6 +6,7 @@ import com.inmobiliaria.InmoGestion.DTO.SimplifiedArquilerDetalleDTO;
 import com.inmobiliaria.InmoGestion.modelo.Contrato;
 import com.inmobiliaria.InmoGestion.servicio.ContratoServicio;
 import com.inmobiliaria.InmoGestion.servicio.PlanillaDetalleMensualServicio;
+import com.inmobiliaria.InmoGestion.servicio.PlanillaMaestroMensualServicio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import java.util.List;
 public class ContratoControlador {
 
     private final ContratoServicio contratoServicio;
+    private final PlanillaMaestroMensualServicio planillaMaestroMensualServicio;
 
     @GetMapping
     public ResponseEntity<List<Contrato>> getAll(){
@@ -48,6 +50,7 @@ public class ContratoControlador {
             Contrato contrato = contratoServicio.crearContrato(contratoDTO);
             return new ResponseEntity<>(contrato, HttpStatus.CREATED);
         }catch (Exception e){
+            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -72,22 +75,5 @@ public class ContratoControlador {
         }
     }
 
-
-
-
-    /*
-    * EndPoint de prueba para peticiones a la api de arquiler
-    *
-    @GetMapping
-    public ResponseEntity<List<SimplifiedArquilerDetalleDTO>> calcularAlquiler(){
-        try{
-            return ResponseEntity.ok(planillaDetalleMensualServicio.generarCalculo());
-        }catch (Exception e){
-            e.printStackTrace();
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    */
 
 }

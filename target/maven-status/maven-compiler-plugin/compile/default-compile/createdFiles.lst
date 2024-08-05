@@ -15,6 +15,7 @@ com\inmobiliaria\InmoGestion\servicio\AmbientesServicio.class
 com\inmobiliaria\InmoGestion\servicio\TipoOperacionServicio.class
 com\inmobiliaria\InmoGestion\repositorio\IndiceRepositorio.class
 com\inmobiliaria\InmoGestion\servicio\InmuebleServicio.class
+com\inmobiliaria\InmoGestion\servicio\PlanillaDetalleMensualDTO.class
 com\inmobiliaria\InmoGestion\modelo\Contrato.class
 com\inmobiliaria\InmoGestion\servicio\ContratoServicio.class
 com\inmobiliaria\InmoGestion\modelo\TipoOperacion.class
@@ -35,6 +36,7 @@ com\inmobiliaria\InmoGestion\modelo\Servicios.class
 com\inmobiliaria\InmoGestion\modelo\Inquilino.class
 com\inmobiliaria\InmoGestion\modelo\Usuario.class
 com\inmobiliaria\InmoGestion\servicio\ImagenServicio.class
+com\inmobiliaria\InmoGestion\controlador\PlanillaMaestroControlador.class
 com\inmobiliaria\InmoGestion\servicio\PlanillaMaestroMensualServicio.class
 com\inmobiliaria\InmoGestion\controlador\TipoOperacionControlador.class
 com\inmobiliaria\InmoGestion\modelo\Categoria.class

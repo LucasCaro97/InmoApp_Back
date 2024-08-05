@@ -114,6 +114,7 @@ public class InmuebleControlador {
             if(c != null) return new ResponseEntity<>(c, HttpStatus.OK);
             else return ResponseEntity.notFound().build();
         }catch (Exception e){
+            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

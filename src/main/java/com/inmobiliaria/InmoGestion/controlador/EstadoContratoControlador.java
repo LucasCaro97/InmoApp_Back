@@ -38,12 +38,13 @@ public class EstadoContratoControlador {
     }
 
     @PostMapping
-    public ResponseEntity<EstadoContrato> create (@RequestBody EstadoContrato estadoContratoDTO){
+    public ResponseEntity<?> create (@RequestBody EstadoContrato estadoContratoDTO){
         try{
             EstadoContrato estadoContrato = estadoContratoServicio.crearEstado(estadoContratoDTO);
-            return new ResponseEntity<>(HttpStatus.CREATED);
+            return new ResponseEntity<>(estadoContrato, HttpStatus.CREATED);
         }catch (Exception e){
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            e.printStackTrace();
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
