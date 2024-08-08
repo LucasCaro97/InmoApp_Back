@@ -59,4 +59,8 @@ public class EstadoInmuebleServicio {
         }
     }
 
+    @Transactional(readOnly = true)
+    public EstadoInmueble obtenerActivo() {
+        return estadoInmuebleRepositorio.findByNombre("Activo");
+    }
 }
