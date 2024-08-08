@@ -21,7 +21,8 @@ public class InmuebleServicio {
     private final ServiciosServicio serviciosServicio;
     private final AmbientesServicio ambientesServicio;
     private final ImagenServicio imagenServicio;
-
+    private final EstadoInmuebleServicio estadoInmuebleServicio;
+    private final PropietarioServicio propietarioServicio;
 
     @Transactional
     public Inmueble crear (InmuebleDTO dto){
@@ -56,6 +57,10 @@ public class InmuebleServicio {
             inmueble.setListaImagenes(imagenServicio.almacenarImagenes(dto.getImagenes()));
             inmueble.setEsAlquiler(dto.getEsAlquiler());
             inmueble.setEsVenta(dto.getEsVenta());
+            inmueble.setPrecioAlquiler(dto.getPrecioAlquiler());
+            inmueble.setPrecioVenta(dto.getPrecioVenta());
+            inmueble.setPropietario(propietarioServicio.obtenerPorId(dto.getPropietario()));
+            inmueble.setEstadoInmueble( (estadoInmuebleServicio.obtenerActivo() != null ) ? estadoInmuebleServicio.obtenerActivo() : null ); // Busca estado inmueble por id = 1 *- Para ello siempre el primer estadoInmueble a crear debe ser 'activo'-*
             return inmuebleRepositorio.save(inmueble);
         }catch (Exception e){
             e.printStackTrace();
@@ -99,6 +104,9 @@ public class InmuebleServicio {
                 if(dto.getImagenes() != null) inmueble.setListaImagenes(imagenServicio.almacenarImagenes(dto.getImagenes(), inmueble.getListaImagenes()));
                 inmueble.setEsAlquiler(dto.getEsAlquiler());
                 inmueble.setEsVenta(dto.getEsVenta());
+                inmueble.setPrecioAlquiler(dto.getPrecioAlquiler());
+                inmueble.setPrecioVenta(dto.getPrecioVenta());
+                inmueble.setEstadoInmueble(estadoInmuebleServicio.obtenerPorId(dto.getEstadoInmueble()));
                 return inmuebleRepositorio.save(inmueble);
             }else{
                 throw new RuntimeException("No se ha encontrado el registro");

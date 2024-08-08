@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -50,7 +51,7 @@ public class InmuebleControlador {
     }
 
     @PostMapping
-    public ResponseEntity<?> crear(@RequestParam("nombre") String nombre,
+    public ResponseEntity<?> crear(       @RequestParam("nombre") String nombre,
                                           @RequestParam("direccion") String direccion,
                                           @RequestParam("ciudad") String ciudad,
                                           @RequestParam("provincia") String provincia,
@@ -61,6 +62,9 @@ public class InmuebleControlador {
                                           @RequestParam("ambientes") Long[] ambientes,
                                           @RequestParam("esVenta") Boolean esVenta,
                                           @RequestParam("esAlquiler") Boolean esAlquiler,
+                                          @RequestParam("precioAlquiler") BigDecimal precioAlquiler,
+                                          @RequestParam("precioVenta") BigDecimal precioVenta,
+                                          @RequestParam("propietario") Long propietario,
                                           @RequestParam(value = "imagenes", required = false) MultipartFile[] imagenes){
         try {
             InmuebleDTO i = new InmuebleDTO();
@@ -76,6 +80,9 @@ public class InmuebleControlador {
             i.setImagenes(imagenes);
             i.setEsVenta(esVenta);
             i.setEsAlquiler(esAlquiler);
+            i.setPrecioAlquiler(precioAlquiler);
+            i.setPrecioVenta(precioVenta);
+            i.setPropietario(propietario);
             Inmueble c = inmuebleServicio.crear(i);
             return new ResponseEntity<>(c, HttpStatus.CREATED);
         }catch (Exception e){
@@ -95,6 +102,10 @@ public class InmuebleControlador {
                                         @RequestParam("ambientes") Long[] ambientes,
                                         @RequestParam("esVenta") Boolean esVenta,
                                         @RequestParam("esAlquiler") Boolean esAlquiler,
+                                        @RequestParam("precioAlquiler") BigDecimal precioAlquiler,
+                                        @RequestParam("precioVenta") BigDecimal precioVenta,
+                                        @RequestParam("estadoInmueble") Long estadoInmueble,
+                                        @RequestParam("propietario") Long propietario,
                                         @RequestParam(value = "imagenes", required = false) MultipartFile[] imagenes){
         try{
             InmuebleDTO inmuebleDTO = new InmuebleDTO();
@@ -110,6 +121,10 @@ public class InmuebleControlador {
             inmuebleDTO.setImagenes(imagenes);
             inmuebleDTO.setEsVenta(esVenta);
             inmuebleDTO.setEsAlquiler(esAlquiler);
+            inmuebleDTO.setPrecioAlquiler(precioAlquiler);
+            inmuebleDTO.setPrecioVenta(precioVenta);
+            inmuebleDTO.setEstadoInmueble(estadoInmueble);
+            inmuebleDTO.setPropietario(propietario);
             Inmueble c = inmuebleServicio.actualizar(id, inmuebleDTO);
             if(c != null) return new ResponseEntity<>(c, HttpStatus.OK);
             else return ResponseEntity.notFound().build();
