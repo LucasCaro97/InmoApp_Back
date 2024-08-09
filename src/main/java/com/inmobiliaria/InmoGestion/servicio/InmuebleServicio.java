@@ -106,6 +106,7 @@ public class InmuebleServicio {
                 inmueble.setEsVenta(dto.getEsVenta());
                 inmueble.setPrecioAlquiler(dto.getPrecioAlquiler());
                 inmueble.setPrecioVenta(dto.getPrecioVenta());
+                inmueble.setPropietario(propietarioServicio.obtenerPorId(dto.getPropietario()));
                 inmueble.setEstadoInmueble(estadoInmuebleServicio.obtenerPorId(dto.getEstadoInmueble()));
                 return inmuebleRepositorio.save(inmueble);
             }else{
