@@ -13,6 +13,7 @@ import com.inmobiliaria.InmoGestion.repositorio.PlanillaDetalleMensualRepositori
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -31,16 +32,17 @@ public class PlanillaDetalleMensualServicio {
     private final ContratoServicio contratoServicio;
     private final PlanillaDetalleMensualRepositorio planillaDetalleMensualRepositorio;
 
-    public void crearDetallesMensual(PlanillaMaestroMensual idMaestroPlanilla){
+    //ESTE METODO GENERA LOS DETALLES A COBRAR MENSUALMENTE DE CADA CONTRATO VIGENTE
+    public void crearDetallesMensual(PlanillaMaestroMensual maestroPlanilla){
         try{
+            LocalDate fechaPlanilla = LocalDate.of(maestroPlanilla.getAnio(), maestroPlanilla.getMes(), 1);
             List<Contrato> contratoList = contratoServicio.findByEstadoActivo();
-            List<PlanillaDetalleMensual> detallesPlanilla = new ArrayList<>();
 
             contratoList.forEach(item -> {
                 PlanillaDetalleMensual detalle = new PlanillaDetalleMensual();
-                detalle.setPlanillaMaestro(idMaestroPlanilla);
+                detalle.setPlanillaMaestro(maestroPlanilla);
                 detalle.setContrato(item);
-                detalle.setImporteAlquiler(calcularArquilerPorContrato(item.getId()).getAmount()); // DEVUELVE EL AMOUNT DEL PERIODO CORRESPONDIENTE ( VER TEMA DIAS )
+                detalle.setImporteAlquiler(calcularArquilerPorContrato(fechaPlanilla, item.getId()).getAmount()); // DEVUELVE EL AMOUNT DEL PERIODO CORRESPONDIENTE ( VER TEMA DIAS )
                 detalle.setHonorarios(detalle.getImporteAlquiler().multiply(BigDecimal.valueOf(item.getPropietario().getPorcentaje_comision()).divide(BigDecimal.valueOf(100))));
                 planillaDetalleMensualRepositorio.save(detalle);
             });
@@ -50,28 +52,28 @@ public class PlanillaDetalleMensualServicio {
     }
 
 
-    public SimplifiedArquilerDetalleDTO calcularArquilerPorContrato(Long contratoId) {
+    //ESTE METODO SE ENCARGA DE RECORRER LA LISTA DE PERIODOS RECIBIDOS DE ARQUILER Y DECIDIR CUAL ES EL CORRESPONDIENTE A COBRAR SEGUN LA FECHA ACTUAL
+    public SimplifiedArquilerDetalleDTO calcularArquilerPorContrato(LocalDate fechaPlanilla, Long contratoId) {
         try {
             Contrato contrato = contratoServicio.obtenerPorId(contratoId);
             List<SimplifiedArquilerDetalleDTO> periodos = generarCalculoArquiler(contrato.getImporteBase(), contrato.getFechaInicio().toString(), contrato.getActualizaCada(), contrato.getIndice().getNombre());
             SimplifiedArquilerDetalleDTO itemRetorno = new SimplifiedArquilerDetalleDTO();
 
+
             for (SimplifiedArquilerDetalleDTO item : periodos) {
                 LocalDate fechaPeriodo = LocalDate.parse(item.getDate());
-                LocalDate fechaActual = LocalDate.now();
-
-                //VERIFICAR Y AFINAR PRECICION DE CONDICION DE FECHAS. --> SI EL MES ES IGUAL AL NUEVO PERIODO, TOMAR NUEVO VALOR
-                if (fechaActual.isAfter(fechaPeriodo)) {
+                LocalDate fechaPeriodoHack = LocalDate.of(fechaPeriodo.getYear(), fechaPeriodo.getMonth(), 1);
+                if(fechaPlanilla.isAfter(fechaPeriodoHack) || fechaPlanilla.isEqual(fechaPeriodoHack)){
                     itemRetorno = item;
                 }
             }
-
             return itemRetorno;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
+    //ESTE METODO DEVUELVE LA LISTA DE PERIODOS DE ARQUILER
     public List<SimplifiedArquilerDetalleDTO> generarCalculoArquiler(BigDecimal importeBase, String fechaInicio, Integer actualizaCada, String indice) throws Exception {
         HttpResponse<String> response = Unirest.post("https://arquilerapi1.p.rapidapi.com/calculate")
                 .header("x-rapidapi-key", "8c4a0f6e62mshcaab1f33712d5cdp1b3356jsna958d14f453f")
@@ -105,4 +107,5 @@ public class PlanillaDetalleMensualServicio {
         return requestBody;
     }
 
+    
 }

@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("indice")
+@RequestMapping("/indice")
 public class IndiceControlador {
 
     private final IndiceServicio indiceServicio;

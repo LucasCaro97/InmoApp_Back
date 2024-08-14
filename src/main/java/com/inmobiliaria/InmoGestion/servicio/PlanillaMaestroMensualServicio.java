@@ -29,13 +29,13 @@ public class PlanillaMaestroMensualServicio {
         return planillaMaestro;
     }
 
-    @Transactional
-    public PlanillaMaestroMensual actualizarPlanillaMaestro(Long id, PlanillaMaestroMensual planillaMaestroMensualDTO){
-        PlanillaMaestroMensual planillaMaestro = planillaMaestroRepo.findById(id).orElse(null);
-        planillaMaestro.setMes(planillaMaestroMensualDTO.getMes());
-        planillaMaestro.setAnio(planillaMaestroMensualDTO.getAnio());
-        return planillaMaestroRepo.save(planillaMaestro);
-    }
+//    @Transactional
+//    public PlanillaMaestroMensual actualizarPlanillaMaestro(Long id, PlanillaMaestroMensual planillaMaestroMensualDTO){
+//        PlanillaMaestroMensual planillaMaestro = planillaMaestroRepo.findById(id).orElse(null);
+//        planillaMaestro.setMes(planillaMaestroMensualDTO.getMes());
+//        planillaMaestro.setAnio(planillaMaestroMensualDTO.getAnio());
+//        return planillaMaestroRepo.save(planillaMaestro);
+//    }
 
     @Transactional(readOnly = true)
     public PlanillaMaestroMensual obtenerPorId(Long id) { return planillaMaestroRepo.findById(id).orElseGet(null); }
@@ -46,4 +46,7 @@ public class PlanillaMaestroMensualServicio {
     @Transactional
     public void eliminarPorId(Long id) { planillaMaestroRepo.deleteById(id); }
 
+//    public void crearPlanillaMaestroTest() {
+//        planillaDetalleMensualServicio.realizarTest();
+//    }
 }

@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface EstadoContratoRepositorio extends JpaRepository<EstadoContrato, Long> {
 
 
+    EstadoContrato findByNombre(String enTramite);
 
 }
