@@ -40,5 +40,10 @@ public class PlanillaMaestroControlador {
         }
     }
 
+//    @GetMapping("/testear")
+//    public void generarPlanilla(){
+//            planillaMaestroMensualServicio.crearPlanillaMaestroTest();
+//    }
+
 
 }

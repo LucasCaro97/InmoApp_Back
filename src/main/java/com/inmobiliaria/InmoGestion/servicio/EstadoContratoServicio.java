@@ -64,5 +64,14 @@ public class EstadoContratoServicio {
         }
     }
 
+    @Transactional(readOnly = true)
+    public EstadoContrato obtenerEstadoEnTramite(){
+        try{
+            return estadoContratoRepositorio.findByNombre("en tramite");
+        }catch (Exception e){
+            throw new RuntimeException("Error al buscar estado en tramite");
+        }
+    }
+
 
 }

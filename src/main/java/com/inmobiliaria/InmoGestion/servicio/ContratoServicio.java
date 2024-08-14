@@ -36,7 +36,7 @@ public class ContratoServicio {
             contrato.setFechaInicio(LocalDate.parse(contratoDTO.getFechaInicio()));
             contrato.setFechaFin(LocalDate.parse(contratoDTO.getFechaFin()));
             contrato.setObservaciones(contratoDTO.getObservaciones());
-            contrato.setEstadoContrato(estadoContratoServicio.obtenerPorId(contratoDTO.getEstadoContrato()));
+            contrato.setEstadoContrato(estadoContratoServicio.obtenerEstadoEnTramite());
             contrato.setIndice(indiceServicio.obtenerPorId(contratoDTO.getIndice()));
             contrato.setActualizaCada(contratoDTO.getActualizaCada());
             contrato.setImporteBase(contratoDTO.getImporteBase());
@@ -55,22 +55,26 @@ public class ContratoServicio {
 
     @Transactional
     public Contrato actulizarContrato(Long id , ContratoDTO contratoDTO){
-        /*  AGREGAR VALIDACIONES --> SI EL CONTRATO ESTA EN CURSO O RESCINDIDO NO SE PUEDE MODIFICAR
+        try{
+            /*  AGREGAR VALIDACIONES --> SI EL CONTRATO ESTA EN CURSO O RESCINDIDO NO SE PUEDE MODIFICAR
             UNICAMENTE CUANDO ESTE EN TRAMITE
-        */
-        Inmueble inmueble = inmuebleServicio.obtenerPorId(contratoDTO.getInmuebleId()).orElse(null);
-        Contrato contrato = this.obtenerPorId(id);
-        contrato.setInmueble(inmueble);
-        contrato.setInquilino(inquilinoServicio.obtenerPorId(contratoDTO.getInquilinoId()));
-        contrato.setPropietario(inmueble.getPropietario());
-        contrato.setTipoContrato(tipoContratoServicio.obtenerPorId(contratoDTO.getTipoContratoId()));
-        contrato.setFechaInicio(LocalDate.parse(contratoDTO.getFechaInicio()));
-        contrato.setFechaFin(LocalDate.parse(contratoDTO.getFechaFin()));
-        contrato.setObservaciones(contratoDTO.getObservaciones());
-        contrato.setEstadoContrato(estadoContratoServicio.obtenerPorId(contratoDTO.getEstadoContrato()));
-        contrato.setIndice(indiceServicio.obtenerPorId(contratoDTO.getIndice()));
-        contrato.setActualizaCada(contratoDTO.getActualizaCada());
-        return contratoRepositorio.save(contrato);
+            */
+            Inmueble inmueble = inmuebleServicio.obtenerPorId(contratoDTO.getInmuebleId()).orElse(null);
+            Contrato contrato = this.obtenerPorId(id);
+            contrato.setInmueble(inmueble);
+            contrato.setInquilino(inquilinoServicio.obtenerPorId(contratoDTO.getInquilinoId()));
+            contrato.setPropietario(inmueble.getPropietario());
+            contrato.setTipoContrato(tipoContratoServicio.obtenerPorId(contratoDTO.getTipoContratoId()));
+            contrato.setFechaInicio(LocalDate.parse(contratoDTO.getFechaInicio()));
+            contrato.setFechaFin(LocalDate.parse(contratoDTO.getFechaFin()));
+            contrato.setObservaciones(contratoDTO.getObservaciones());
+            contrato.setEstadoContrato(estadoContratoServicio.obtenerPorId(contratoDTO.getEstadoContrato()));
+            contrato.setIndice(indiceServicio.obtenerPorId(contratoDTO.getIndice()));
+            contrato.setActualizaCada(contratoDTO.getActualizaCada());
+            return contratoRepositorio.save(contrato);
+        }catch (Exception e){
+            throw new RuntimeException("Error al actualizar el contrato");
+        }
     }
 
     @Transactional
