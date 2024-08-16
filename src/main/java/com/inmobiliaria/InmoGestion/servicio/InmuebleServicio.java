@@ -4,7 +4,6 @@ package com.inmobiliaria.InmoGestion.servicio;
 import com.inmobiliaria.InmoGestion.DTO.InmuebleDTO;
 import com.inmobiliaria.InmoGestion.modelo.*;
 import com.inmobiliaria.InmoGestion.repositorio.InmuebleRepositorio;
-import com.inmobiliaria.InmoGestion.repositorio.TipoOperacionRepositorio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -23,9 +23,6 @@ public class Inmueble {
     private String direccion;
     private String ciudad;
     private String provincia;
-    @ManyToOne
-    @JoinColumn(name = "fk_tipo_operacion")
-    private TipoOperacion tipoOperacion;                   // alquiler / venta
 
     @ManyToOne
     @JoinColumn(name = "fk_categoria")
@@ -54,9 +51,6 @@ public class Inmueble {
             inverseJoinColumns = @JoinColumn(name = "ambientes_id")
     )
     private List<Ambientes> ambientes;  // ---> SELECCION MULTIPLE []
-
-
-    private BigDecimal precio;                      // mensual caso alquiler / contado precio compra
 
     @ElementCollection
     private List<String>    listaImagenes;
