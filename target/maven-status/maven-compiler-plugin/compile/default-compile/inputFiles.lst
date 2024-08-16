@@ -4,14 +4,13 @@ C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inm
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Ambientes.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\ContratoControlador.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\RegisterRequest.java
-C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\TipoOperacionRepositorio.java
+C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\DataLoader.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\PlanillaDetalleMensualDTO.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Usuario.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\LoginRequest.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\SimplifiedArquilerDetalleDTO.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\InquilinoRepositorio.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\PlanillaMaestroMensual.java
-C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\TipoOperacionServicio.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\EstadoContratoServicio.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\ArquilerDetalleDTO.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\TipoContratoRepositorio.java
@@ -27,7 +26,6 @@ C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inm
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\ContratoRepositorio.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\PlanillaDetalleMensual.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Auth\AuthResponse.java
-C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\TipoOperacion.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\Config\SecurityConfig.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\TipoContrato.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\PlanillaDetalleMensualRepositorio.java
@@ -51,7 +49,6 @@ C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inm
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\repositorio\CaracteristicasRepositorio.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\ServiciosControlador.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\InmuebleServicio.java
-C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\controlador\TipoOperacionControlador.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\modelo\Categoria.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\servicio\PlanillaDetalleMensualServicio.java
 C:\Users\FLIA CARO\Desktop\PC AORUS\PROYECTOS\InmoApp_Back\src\main\java\com\inmobiliaria\InmoGestion\DTO\DetailsDTO.java

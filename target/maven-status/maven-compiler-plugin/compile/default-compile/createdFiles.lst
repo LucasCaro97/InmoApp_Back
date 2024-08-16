@@ -12,13 +12,11 @@ com\inmobiliaria\InmoGestion\DTO\ContratoDTO.class
 com\inmobiliaria\InmoGestion\controlador\InmuebleControlador.class
 com\inmobiliaria\InmoGestion\DTO\ArquilerResponse.class
 com\inmobiliaria\InmoGestion\servicio\AmbientesServicio.class
-com\inmobiliaria\InmoGestion\servicio\TipoOperacionServicio.class
 com\inmobiliaria\InmoGestion\repositorio\IndiceRepositorio.class
 com\inmobiliaria\InmoGestion\servicio\InmuebleServicio.class
 com\inmobiliaria\InmoGestion\servicio\PlanillaDetalleMensualDTO.class
 com\inmobiliaria\InmoGestion\modelo\Contrato.class
 com\inmobiliaria\InmoGestion\servicio\ContratoServicio.class
-com\inmobiliaria\InmoGestion\modelo\TipoOperacion.class
 com\inmobiliaria\InmoGestion\controlador\CategoriaControlador.class
 com\inmobiliaria\InmoGestion\repositorio\CaracteristicasRepositorio.class
 com\inmobiliaria\InmoGestion\servicio\InquilinoServicio.class
@@ -27,7 +25,6 @@ com\inmobiliaria\InmoGestion\servicio\EstadoContratoServicio.class
 com\inmobiliaria\InmoGestion\Auth\LoginRequest.class
 com\inmobiliaria\InmoGestion\servicio\TipoContratoServicio.class
 com\inmobiliaria\InmoGestion\Jwt\JwtService.class
-com\inmobiliaria\InmoGestion\repositorio\TipoOperacionRepositorio.class
 com\inmobiliaria\InmoGestion\servicio\CategoriaServicio.class
 com\inmobiliaria\InmoGestion\DTO\ArquilerDetalleDTO.class
 com\inmobiliaria\InmoGestion\repositorio\PropietarioRepositorio.class
@@ -38,7 +35,6 @@ com\inmobiliaria\InmoGestion\modelo\Usuario.class
 com\inmobiliaria\InmoGestion\servicio\ImagenServicio.class
 com\inmobiliaria\InmoGestion\controlador\PlanillaMaestroControlador.class
 com\inmobiliaria\InmoGestion\servicio\PlanillaMaestroMensualServicio.class
-com\inmobiliaria\InmoGestion\controlador\TipoOperacionControlador.class
 com\inmobiliaria\InmoGestion\modelo\Categoria.class
 com\inmobiliaria\InmoGestion\servicio\PlanillaDetalleMensualServicio.class
 com\inmobiliaria\InmoGestion\repositorio\AmbientesRepositorio.class
@@ -50,6 +46,7 @@ com\inmobiliaria\InmoGestion\controlador\ContratoControlador.class
 com\inmobiliaria\InmoGestion\modelo\Caracteristicas.class
 com\inmobiliaria\InmoGestion\repositorio\UsuarioRepositorio.class
 com\inmobiliaria\InmoGestion\repositorio\InmuebleRepositorio.class
+com\inmobiliaria\InmoGestion\servicio\DataLoader.class
 com\inmobiliaria\InmoGestion\servicio\PropietarioServicio.class
 com\inmobiliaria\InmoGestion\Auth\RegisterRequest$RegisterRequestBuilder.class
 com\inmobiliaria\InmoGestion\modelo\TipoContrato.class
