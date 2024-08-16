@@ -60,6 +60,7 @@ com\inmobiliaria\InmoGestion\repositorio\EstadoContratoRepositorio.class
 com\inmobiliaria\InmoGestion\servicio\EstadoInmuebleServicio.class
 com\inmobiliaria\InmoGestion\DTO\InmuebleDTO.class
 com\inmobiliaria\InmoGestion\modelo\EstadoContrato.class
+com\inmobiliaria\InmoGestion\Reportes\PlanillaMensualExcel.class
 com\inmobiliaria\InmoGestion\controlador\CaracteristicasControlador.class
 com\inmobiliaria\InmoGestion\controlador\EstadoContratoControlador.class
 com\inmobiliaria\InmoGestion\Auth\LoginRequest$LoginRequestBuilder.class

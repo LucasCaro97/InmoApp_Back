@@ -36,6 +36,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.GET, "/inmueble").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/inmueble/{id}").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/images/**").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/planillamensual/exportar/**").permitAll()
                                 .anyRequest().authenticated()
                 ).
                 cors(cors -> cors.configurationSource(corsConfigurationSource()))
