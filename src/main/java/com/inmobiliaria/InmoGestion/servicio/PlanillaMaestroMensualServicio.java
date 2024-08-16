@@ -41,10 +41,19 @@ public class PlanillaMaestroMensualServicio {
     public PlanillaMaestroMensual obtenerPorId(Long id) { return planillaMaestroRepo.findById(id).orElseGet(null); }
 
     @Transactional(readOnly = true)
+    public PlanillaMaestroMensual obtenerPorMesAndAnio(Integer mes, Integer anio) { return planillaMaestroRepo.findByMesAndAnio(mes,anio); }
+
+    @Transactional(readOnly = true)
     public List<PlanillaMaestroMensual> obtenerTodas() { return planillaMaestroRepo.findAll(); }
 
     @Transactional
     public void eliminarPorId(Long id) { planillaMaestroRepo.deleteById(id); }
+
+    public List<PlanillaDetalleMensual> obtenerDetalles(Integer mes, Integer anio) {
+        PlanillaMaestroMensual planilla = this.obtenerPorMesAndAnio(mes,anio);
+        List<PlanillaDetalleMensual> detalles = planillaDetalleMensualServicio.obtenerDetallesMaestro(planilla);
+        return detalles;
+    }
 
 //    public void crearPlanillaMaestroTest() {
 //        planillaDetalleMensualServicio.realizarTest();

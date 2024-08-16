@@ -107,5 +107,8 @@ public class PlanillaDetalleMensualServicio {
         return requestBody;
     }
 
-    
+
+    public List<PlanillaDetalleMensual> obtenerDetallesMaestro(PlanillaMaestroMensual planillaMaestro) {
+        return planillaDetalleMensualRepositorio.findByPlanillaMaestro(planillaMaestro);
+    }
 }

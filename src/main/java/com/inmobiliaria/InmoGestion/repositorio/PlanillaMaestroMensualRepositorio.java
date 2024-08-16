@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface PlanillaMaestroMensualRepositorio extends JpaRepository<PlanillaMaestroMensual, Long> {
 
 
+    PlanillaMaestroMensual findByMesAndAnio(Integer mes, Integer anio);
 }
