@@ -29,20 +29,18 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PlanillaDetalleMensualServicio {
 
-    private final ContratoServicio contratoServicio;
     private final PlanillaDetalleMensualRepositorio planillaDetalleMensualRepositorio;
 
     //ESTE METODO GENERA LOS DETALLES A COBRAR MENSUALMENTE DE CADA CONTRATO VIGENTE
-    public void crearDetallesMensual(PlanillaMaestroMensual maestroPlanilla){
+    public void crearDetallesMensual(PlanillaMaestroMensual maestroPlanilla, List<Contrato> contratoList){
         try{
             LocalDate fechaPlanilla = LocalDate.of(maestroPlanilla.getAnio(), maestroPlanilla.getMes(), 1);
-            List<Contrato> contratoList = contratoServicio.findByEstadoActivo();
 
             contratoList.forEach(item -> {
                 PlanillaDetalleMensual detalle = new PlanillaDetalleMensual();
                 detalle.setPlanillaMaestro(maestroPlanilla);
                 detalle.setContrato(item);
-                detalle.setImporteAlquiler(calcularArquilerPorContrato(fechaPlanilla, item.getId()).getAmount()); // DEVUELVE EL AMOUNT DEL PERIODO CORRESPONDIENTE ( VER TEMA DIAS )
+                detalle.setImporteAlquiler(calcularArquilerPorContrato(fechaPlanilla, item).getAmount()); // DEVUELVE EL AMOUNT DEL PERIODO CORRESPONDIENTE ( VER TEMA DIAS )
                 detalle.setHonorarios(detalle.getImporteAlquiler().multiply(BigDecimal.valueOf(item.getPropietario().getPorcentaje_comision()).divide(BigDecimal.valueOf(100))));
                 planillaDetalleMensualRepositorio.save(detalle);
             });
@@ -53,9 +51,8 @@ public class PlanillaDetalleMensualServicio {
 
 
     //ESTE METODO SE ENCARGA DE RECORRER LA LISTA DE PERIODOS RECIBIDOS DE ARQUILER Y DECIDIR CUAL ES EL CORRESPONDIENTE A COBRAR SEGUN LA FECHA ACTUAL
-    public SimplifiedArquilerDetalleDTO calcularArquilerPorContrato(LocalDate fechaPlanilla, Long contratoId) {
+    public SimplifiedArquilerDetalleDTO calcularArquilerPorContrato(LocalDate fechaPlanilla, Contrato contrato) {
         try {
-            Contrato contrato = contratoServicio.obtenerPorId(contratoId);
             List<SimplifiedArquilerDetalleDTO> periodos = generarCalculoArquiler(contrato.getImporteBase(), contrato.getFechaInicio().toString(), contrato.getActualizaCada(), contrato.getIndice().getNombre());
             SimplifiedArquilerDetalleDTO itemRetorno = new SimplifiedArquilerDetalleDTO();
 

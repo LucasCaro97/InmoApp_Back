@@ -1,8 +1,10 @@
 package com.inmobiliaria.InmoGestion.controlador;
 
 import com.inmobiliaria.InmoGestion.Reportes.PlanillaMensualExcel;
+import com.inmobiliaria.InmoGestion.modelo.Contrato;
 import com.inmobiliaria.InmoGestion.modelo.PlanillaDetalleMensual;
 import com.inmobiliaria.InmoGestion.modelo.PlanillaMaestroMensual;
+import com.inmobiliaria.InmoGestion.servicio.ContratoServicio;
 import com.inmobiliaria.InmoGestion.servicio.PlanillaMaestroMensualServicio;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +23,7 @@ import java.util.List;
 public class PlanillaMaestroControlador {
 
     private final PlanillaMaestroMensualServicio planillaMaestroMensualServicio;
+    private final ContratoServicio contratoServicio;
 
     @GetMapping
     public ResponseEntity<List<PlanillaMaestroMensual>> getAll(){
@@ -36,7 +39,8 @@ public class PlanillaMaestroControlador {
     @PostMapping("/{mes}/{anio}")
     public ResponseEntity<PlanillaMaestroMensual> generarPlanilla(@PathVariable Integer mes, @PathVariable Integer anio){
         try {
-            PlanillaMaestroMensual planillaMensual = planillaMaestroMensualServicio.crearPlanillaMaestro(mes, anio);
+            List<Contrato> contratoList = contratoServicio.findByEstadoActivo();
+            PlanillaMaestroMensual planillaMensual = planillaMaestroMensualServicio.crearPlanillaMaestro(mes, anio, contratoList);
             return ResponseEntity.ok(planillaMensual);
         }catch (Exception e){
             e.printStackTrace();

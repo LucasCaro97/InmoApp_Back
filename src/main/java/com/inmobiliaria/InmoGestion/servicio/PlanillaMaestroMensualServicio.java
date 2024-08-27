@@ -21,12 +21,12 @@ public class PlanillaMaestroMensualServicio {
 
 
     @Transactional
-    public PlanillaMaestroMensual crearPlanillaMaestro(Integer mes, Integer year){
+    public PlanillaMaestroMensual crearPlanillaMaestro(Integer mes, Integer year, List<Contrato> contratoList){
         PlanillaMaestroMensual planillaMaestroMensual = new PlanillaMaestroMensual();
         planillaMaestroMensual.setMes(mes);
         planillaMaestroMensual.setAnio(year);
         PlanillaMaestroMensual planillaMaestro = planillaMaestroRepo.save(planillaMaestroMensual);
-        planillaDetalleMensualServicio.crearDetallesMensual(planillaMaestro);
+        planillaDetalleMensualServicio.crearDetallesMensual(planillaMaestro, contratoList);
         return planillaMaestro;
     }
 
