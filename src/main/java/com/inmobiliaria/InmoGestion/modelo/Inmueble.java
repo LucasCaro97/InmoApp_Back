@@ -68,7 +68,4 @@ public class Inmueble {
     @ManyToOne
     @JoinColumn(name = "fk_estado_inmueble")
     private EstadoInmueble estadoInmueble;
-
-
-
 }

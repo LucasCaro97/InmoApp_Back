@@ -111,4 +111,15 @@ public class PlanillaDetalleMensualServicio {
     public List<PlanillaDetalleMensual> obtenerDetallesMaestro(PlanillaMaestroMensual planillaMaestro) {
         return planillaDetalleMensualRepositorio.findByPlanillaMaestro(planillaMaestro);
     }
+
+    public void agregarNuevoDetalle(PlanillaMaestroMensual planillaMaestro, Contrato contrato){
+        PlanillaDetalleMensual planillaDetalle = new PlanillaDetalleMensual();
+        planillaDetalle.setPlanillaMaestro(planillaMaestro);
+        planillaDetalle.setContrato(contrato);
+        planillaDetalle.setImporteAlquiler(contrato.getImporteBase());
+        planillaDetalle.setHonorarios(planillaDetalle.getImporteAlquiler().multiply(BigDecimal.valueOf(contrato.getPropietario().getPorcentaje_comision())).divide(BigDecimal.valueOf(100)));
+        planillaDetalleMensualRepositorio.save(planillaDetalle);
+    }
+
+
 }

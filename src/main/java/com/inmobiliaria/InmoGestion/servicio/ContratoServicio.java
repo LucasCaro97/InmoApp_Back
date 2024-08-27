@@ -1,9 +1,7 @@
 package com.inmobiliaria.InmoGestion.servicio;
 
 import com.inmobiliaria.InmoGestion.DTO.ContratoDTO;
-import com.inmobiliaria.InmoGestion.modelo.Contrato;
-import com.inmobiliaria.InmoGestion.modelo.EstadoContrato;
-import com.inmobiliaria.InmoGestion.modelo.Inmueble;
+import com.inmobiliaria.InmoGestion.modelo.*;
 import com.inmobiliaria.InmoGestion.repositorio.ContratoRepositorio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,6 +21,7 @@ public class ContratoServicio {
     private final TipoContratoServicio tipoContratoServicio;
     private final EstadoContratoServicio estadoContratoServicio;
     private final IndiceServicio indiceServicio;
+    private final PlanillaMaestroMensualServicio planillaMaestroMensualServicio;
 
     @Transactional
     public Contrato crearContrato(ContratoDTO contratoDTO){
@@ -40,6 +39,8 @@ public class ContratoServicio {
             contrato.setIndice(indiceServicio.obtenerPorId(contratoDTO.getIndice()));
             contrato.setActualizaCada(contratoDTO.getActualizaCada());
             contrato.setImporteBase(contratoDTO.getImporteBase());
+            inmuebleServicio.cambiarEstado(inmueble.getId(), "ocupado");
+            planillaMaestroMensualServicio.generarNuevoDetalle(contrato);
             return contratoRepositorio.save(contrato);
         }catch (Exception e){
             throw new RuntimeException("Error al crear el contrato");
@@ -56,7 +57,7 @@ public class ContratoServicio {
     @Transactional
     public Contrato actulizarContrato(Long id , ContratoDTO contratoDTO){
         try{
-            /*  AGREGAR VALIDACIONES --> SI EL CONTRATO ESTA EN CURSO O RESCINDIDO NO SE PUEDE MODIFICAR
+            /*  AGREGAR VALIDACIONES --> SI EL CONTRATO ESTA "ACTIVO" O RESCINDIDO NO SE PUEDE MODIFICAR
             UNICAMENTE CUANDO ESTE EN TRAMITE
             */
             Inmueble inmueble = inmuebleServicio.obtenerPorId(contratoDTO.getInmuebleId()).orElse(null);
@@ -71,6 +72,8 @@ public class ContratoServicio {
             contrato.setEstadoContrato(estadoContratoServicio.obtenerPorId(contratoDTO.getEstadoContrato()));
             contrato.setIndice(indiceServicio.obtenerPorId(contratoDTO.getIndice()));
             contrato.setActualizaCada(contratoDTO.getActualizaCada());
+
+            if (contrato.getEstadoContrato().getNombre().equals("rescindido")) inmuebleServicio.cambiarEstado(inmueble.getId(), "activo");
             return contratoRepositorio.save(contrato);
         }catch (Exception e){
             throw new RuntimeException("Error al actualizar el contrato");

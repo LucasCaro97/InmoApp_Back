@@ -59,7 +59,7 @@ public class InmuebleServicio {
             inmueble.setPrecioAlquiler(dto.getPrecioAlquiler());
             inmueble.setPrecioVenta(dto.getPrecioVenta());
             inmueble.setPropietario(propietarioServicio.obtenerPorId(dto.getPropietario()));
-            inmueble.setEstadoInmueble( (estadoInmuebleServicio.obtenerActivo() != null ) ? estadoInmuebleServicio.obtenerActivo() : null ); // Busca estado inmueble por id = 1 *- Para ello siempre el primer estadoInmueble a crear debe ser 'activo'-*
+            inmueble.setEstadoInmueble( (estadoInmuebleServicio.obtenerPorNombre("activo") != null ) ? estadoInmuebleServicio.obtenerPorNombre("activo") : null ); // Busca estado inmueble por id = 1 *- Para ello siempre el primer estadoInmueble a crear debe ser 'activo'-*
             return inmuebleRepositorio.save(inmueble);
         }catch (Exception e){
             e.printStackTrace();
@@ -166,5 +166,12 @@ public class InmuebleServicio {
         }
     }
 
+    @Transactional
+    public void cambiarEstado(Long inmuebleId, String estado) {
+        EstadoInmueble estadoInmueble = estadoInmuebleServicio.obtenerPorNombre(estado);
+        Inmueble inmueble = this.obtenerPorId(inmuebleId).orElse(null);
 
+        inmueble.setEstadoInmueble(estadoInmueble);
+        inmuebleRepositorio.save(inmueble);
+    }
 }
