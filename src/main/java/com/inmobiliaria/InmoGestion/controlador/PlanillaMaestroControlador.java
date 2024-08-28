@@ -36,6 +36,16 @@ public class PlanillaMaestroControlador {
 
     }
 
+    @GetMapping("/{mes}/{anio}")
+    public ResponseEntity<PlanillaMaestroMensual> getByMonthAndYear(@PathVariable Integer mes, @PathVariable Integer anio){
+        try{
+            PlanillaMaestroMensual planillaMaestroMensual = planillaMaestroMensualServicio.obtenerPorMesAndAnio(mes,anio);
+            return ResponseEntity.ok(planillaMaestroMensual);
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @PostMapping("/{mes}/{anio}")
     public ResponseEntity<PlanillaMaestroMensual> generarPlanilla(@PathVariable Integer mes, @PathVariable Integer anio){
         try {
