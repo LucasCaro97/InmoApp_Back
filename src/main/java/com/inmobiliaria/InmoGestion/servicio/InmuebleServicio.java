@@ -140,7 +140,6 @@ public class InmuebleServicio {
     @Transactional
     public HashMap<String, String> eliminarPorId(Long id){
         try {
-            System.out.println("Ingreso al servicio eliminar");
             //CREO UN HASHMAP PARA DEVOLVER LA RESPUESTA
             HashMap<String, String> respuesta = new HashMap<>();
             Optional<Inmueble> inmuebleOptional = inmuebleRepositorio.findById(id); // BUSCO EL INMUEBLE EN LA BD
@@ -150,8 +149,12 @@ public class InmuebleServicio {
                 Inmueble inmueble = inmuebleOptional.get(); // OBTENGO EL OBJETO
                 List<String> listaImagenes = inmueble.getListaImagenes();   // PASO LOS NOMBRES DE LAS IMAGENES QUE TIENE VINCULADAS
                 inmuebleRepositorio.deleteById(id); //ELIMINO DE LA BD
-                if (!listaImagenes.isEmpty()) { // SI TIENE IMAGENES LAS ELIMINO
-                    imagenServicio.eliminarImagenes(listaImagenes);
+
+                boolean exists = inmuebleRepositorio.existsById(id);
+                if(!exists){
+                    if (!listaImagenes.isEmpty()) { // SI TIENE IMAGENES LAS ELIMINO
+                        imagenServicio.eliminarImagenes(listaImagenes);
+                    }
                 }
 
                 respuesta.put("mensaje", "Se ha eliminardo correctamente el registro");
