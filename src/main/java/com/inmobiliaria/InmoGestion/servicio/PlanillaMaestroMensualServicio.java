@@ -1,5 +1,6 @@
 package com.inmobiliaria.InmoGestion.servicio;
 
+import com.inmobiliaria.InmoGestion.modelo.Contrato;
 import com.inmobiliaria.InmoGestion.modelo.PlanillaDetalleMensual;
 import com.inmobiliaria.InmoGestion.modelo.PlanillaMaestroMensual;
 import com.inmobiliaria.InmoGestion.repositorio.PlanillaMaestroMensualRepositorio;
@@ -20,12 +21,12 @@ public class PlanillaMaestroMensualServicio {
 
 
     @Transactional
-    public PlanillaMaestroMensual crearPlanillaMaestro(Integer mes, Integer year){
+    public PlanillaMaestroMensual crearPlanillaMaestro(Integer mes, Integer year, List<Contrato> contratoList){
         PlanillaMaestroMensual planillaMaestroMensual = new PlanillaMaestroMensual();
         planillaMaestroMensual.setMes(mes);
         planillaMaestroMensual.setAnio(year);
         PlanillaMaestroMensual planillaMaestro = planillaMaestroRepo.save(planillaMaestroMensual);
-        planillaDetalleMensualServicio.crearDetallesMensual(planillaMaestro);
+        planillaDetalleMensualServicio.crearDetallesMensual(planillaMaestro, contratoList);
         return planillaMaestro;
     }
 
@@ -55,7 +56,14 @@ public class PlanillaMaestroMensualServicio {
         return detalles;
     }
 
-//    public void crearPlanillaMaestroTest() {
-//        planillaDetalleMensualServicio.realizarTest();
-//    }
+    public void generarNuevoDetalle(Contrato contrato) {
+        Integer mes = contrato.getFechaInicio().getMonthValue();
+        Integer anio = contrato.getFechaInicio().getYear();
+
+        PlanillaMaestroMensual planillaMaestro = this.obtenerPorMesAndAnio(mes, anio);
+
+
+
+    }
+
 }

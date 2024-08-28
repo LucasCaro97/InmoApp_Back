@@ -137,7 +137,6 @@ public class InmuebleControlador {
     @DeleteMapping("/{id}")
     public ResponseEntity<HashMap<String, String>> eliminar(@PathVariable Long id){
         try {
-            System.out.println("Eliminar item " + id);
             HashMap<String, String> respuesta = inmuebleServicio.eliminarPorId(id);
             return new ResponseEntity<>(respuesta,HttpStatus.OK);
         }catch (Exception e){

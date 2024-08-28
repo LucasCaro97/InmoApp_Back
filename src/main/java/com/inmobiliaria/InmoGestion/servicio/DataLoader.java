@@ -41,7 +41,7 @@ public class DataLoader {
     }
 
     @Bean
-    public CommandLineRunner loadDataEstadoInmueble() {
+    public CommandLineRunner loadDataIndice() {
         return args -> {
             if (indiceRepositorio.count() == 0) {
                 Indice ind1 = new Indice();
@@ -61,7 +61,7 @@ public class DataLoader {
     }
 
     @Bean
-    public CommandLineRunner loadDataIndice() {
+    public CommandLineRunner loadDataEstadoInmueble() {
         return args -> {
             if (estadoInmuebleRepositorio.count() == 0) {
                 EstadoInmueble estado1 = new EstadoInmueble();
