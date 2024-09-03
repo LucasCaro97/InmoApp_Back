@@ -1,15 +1,17 @@
 package com.inmobiliaria.InmoGestion.servicio;
 
-import com.inmobiliaria.InmoGestion.modelo.EstadoContrato;
-import com.inmobiliaria.InmoGestion.modelo.EstadoInmueble;
-import com.inmobiliaria.InmoGestion.modelo.Indice;
+import com.inmobiliaria.InmoGestion.Auth.AuthService;
+import com.inmobiliaria.InmoGestion.modelo.*;
 import com.inmobiliaria.InmoGestion.repositorio.EstadoContratoRepositorio;
 import com.inmobiliaria.InmoGestion.repositorio.EstadoInmuebleRepositorio;
 import com.inmobiliaria.InmoGestion.repositorio.IndiceRepositorio;
+import com.inmobiliaria.InmoGestion.repositorio.UsuarioRepositorio;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,6 +21,14 @@ public class DataLoader {
     private final EstadoInmuebleRepositorio estadoInmuebleRepositorio;
     private final EstadoContratoRepositorio estadoContratoRepositorio;
     private final IndiceRepositorio indiceRepositorio;
+    private final UsuarioRepositorio usuarioRepositorio;
+    private final PasswordEncoder passwordEncoder;
+
+
+    @Value("${username}")
+    private String username;
+    @Value("${password}")
+    private String password;
 
 
     @Bean
@@ -79,4 +89,26 @@ public class DataLoader {
         };
 
     }
+
+    @Bean
+    public CommandLineRunner loadUser(){
+        return args -> {
+            if (usuarioRepositorio.count() == 0) {
+                Usuario usuario = Usuario.builder()
+                        .username(username)
+                        .password(passwordEncoder.encode(password))
+                        .firstName("admin")
+                        .lastName("admin")
+                        .country("Eldorado")
+                        .rol(Rol.ADMIN)
+                        .build();
+
+                System.out.println(username);
+                System.out.println(password);
+                usuarioRepositorio.save(usuario);
+            }
+        };
+    }
+
+
 }
