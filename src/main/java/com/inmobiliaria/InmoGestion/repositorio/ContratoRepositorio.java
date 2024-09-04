@@ -13,7 +13,7 @@ public interface ContratoRepositorio extends JpaRepository<Contrato, Long> {
 
 
     @Query(value = "SELECT * FROM contrato  WHERE fk_estado_contrato = ?", nativeQuery = true)
-    List<Contrato> findByEstadoActivo(Long id);
+    List<Contrato> findByEstadoEnTramite(Long id);
 
 
 }

@@ -49,7 +49,8 @@ public class PlanillaMaestroControlador {
     @PostMapping("/{mes}/{anio}")
     public ResponseEntity<PlanillaMaestroMensual> generarPlanilla(@PathVariable Integer mes, @PathVariable Integer anio){
         try {
-            List<Contrato> contratoList = contratoServicio.findByEstadoActivo();
+            List<Contrato> contratoList = contratoServicio.findByEstadoEnTramite();
+            System.out.println(contratoList);
             PlanillaMaestroMensual planillaMensual = planillaMaestroMensualServicio.crearPlanillaMaestro(mes, anio, contratoList);
             return ResponseEntity.ok(planillaMensual);
         }catch (Exception e){
