@@ -93,9 +93,9 @@ public class ContratoServicio {
     }
 
     @Transactional(readOnly = true)
-    public List<Contrato> findByEstadoActivo() {
+    public List<Contrato> findByEstadoEnTramite() {
         try{
-            return contratoRepositorio.findByEstadoActivo(1l);
+            return contratoRepositorio.findByEstadoEnTramite(2l);
         }catch (Exception e){
             throw new RuntimeException("Error al buscar el contrato por estado");
         }

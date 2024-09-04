@@ -32,7 +32,8 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authRequest ->
                         authRequest
-                                .requestMatchers("/auth/**").permitAll()
+                                .requestMatchers("/auth/login").permitAll()
+                                .requestMatchers("/auth/register").hasAuthority("ADMIN")
                                 .requestMatchers(HttpMethod.GET, "/inmueble").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/inmueble/{id}").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/images/**").permitAll()
