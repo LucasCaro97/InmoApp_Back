@@ -32,10 +32,12 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authRequest ->
                         authRequest
-                                .requestMatchers("/auth/**").permitAll()
+                                .requestMatchers("/auth/login").permitAll()
+                                .requestMatchers("/auth/register").hasAuthority("ADMIN")
                                 .requestMatchers(HttpMethod.GET, "/inmueble").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/inmueble/{id}").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/images/**").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/planillamensual/exportar/**").permitAll()
                                 .anyRequest().authenticated()
                 ).
                 cors(cors -> cors.configurationSource(corsConfigurationSource()))
@@ -44,15 +46,14 @@ public class SecurityConfig {
                                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authProvider)
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .build()
-                ;
+                .build();
 
     }
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.setAllowedOrigins(List.of("http://200.58.107.39:5173"));
+        corsConfiguration.setAllowedOrigins(List.of("http://localhost:5173"));
         corsConfiguration.addAllowedHeader("*");
         corsConfiguration.addAllowedMethod("*");
         corsConfiguration.setAllowCredentials(true);

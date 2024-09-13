@@ -1,0 +1,29 @@
+package com.inmobiliaria.InmoGestion.modelo;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+public class Propietario {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nombreCompleto;
+    private String dni;
+    private String cuil;
+    private String telefono;
+    private String direccion;
+    private String correo;
+    private Double porcentaje_comision;
+
+
+
+}

@@ -2,7 +2,6 @@ package com.inmobiliaria.InmoGestion.controlador;
 
 
 import com.inmobiliaria.InmoGestion.modelo.Caracteristicas;
-import com.inmobiliaria.InmoGestion.modelo.TipoOperacion;
 import com.inmobiliaria.InmoGestion.servicio.CaracteristicasServicio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

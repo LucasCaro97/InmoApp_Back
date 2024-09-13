@@ -12,11 +12,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class TipoOperacion {
+public class Indice {
 
-    @Id @GeneratedValue( strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre; //               Alquiler / Venta
-
+    private String nombre;
 
 }
