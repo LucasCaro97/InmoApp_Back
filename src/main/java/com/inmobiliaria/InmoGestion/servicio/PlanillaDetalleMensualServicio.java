@@ -72,9 +72,8 @@ public class PlanillaDetalleMensualServicio {
 
     //ESTE METODO DEVUELVE LA LISTA DE PERIODOS DE ARQUILER
     public List<SimplifiedArquilerDetalleDTO> generarCalculoArquiler(BigDecimal importeBase, String fechaInicio, Integer actualizaCada, String indice) throws Exception {
-
         HttpResponse<String> response = Unirest.post("https://arquilerapi1.p.rapidapi.com/calculate")
-                .header("x-rapidapi-key", "2bed41cea6msh8e171750e7d6023p1fd74djsn7e2a2189e00d")
+                .header("x-rapidapi-key", "8c4a0f6e62mshcaab1f33712d5cdp1b3356jsna958d14f453f")
                 .header("x-rapidapi-host", "arquilerapi1.p.rapidapi.com")
                 .header("Content-Type", "application/json")
                 .body(generarRequestBody(importeBase, fechaInicio, actualizaCada, indice))

@@ -14,6 +14,9 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "planilla_maestro_mensual", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"mes", "anio"})
+})
 public class PlanillaMaestroMensual {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

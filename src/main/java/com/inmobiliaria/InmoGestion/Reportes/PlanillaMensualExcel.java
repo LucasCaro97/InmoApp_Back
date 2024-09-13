@@ -118,7 +118,7 @@ public class PlanillaMensualExcel {
             celda.setCellStyle(estilo);
 
             Cell celda3 = fila.createCell(3);
-            celda3.setCellValue(p.getContrato().getFechaFin());
+            celda3.setCellValue(p.getContrato().getFechaFin().toString());
             hoja.autoSizeColumn(3);
             celda.setCellStyle(estilo);
 
@@ -128,7 +128,7 @@ public class PlanillaMensualExcel {
             celda.setCellStyle(estilo);
 
             Cell celda5 = fila.createCell(5);
-            celda5.setCellValue(p.getImporteAlquiler().toString());
+            celda5.setCellValue(p.getImporteAlquiler().doubleValue());
             hoja.autoSizeColumn(5);
             celda.setCellStyle(estilo);
 
@@ -138,12 +138,12 @@ public class PlanillaMensualExcel {
             celda.setCellStyle(estilo);
 
             Cell celda7 = fila.createCell(7);
-            celda7.setCellValue(p.getHonorarios().toString());
+            celda7.setCellValue(p.getHonorarios().doubleValue());
             hoja.autoSizeColumn(7);
             celda.setCellStyle(estilo);
 
             Cell celda8 = fila.createCell(8);
-            celda8.setCellValue(p.getImporteAlquiler().subtract(p.getHonorarios()).toString());
+            celda8.setCellValue(p.getImporteAlquiler().subtract(p.getHonorarios()).doubleValue());
             hoja.autoSizeColumn(8);
             celda.setCellStyle(estilo);
 

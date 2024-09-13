@@ -5,6 +5,7 @@ import com.inmobiliaria.InmoGestion.modelo.PlanillaDetalleMensual;
 import com.inmobiliaria.InmoGestion.modelo.PlanillaMaestroMensual;
 import com.inmobiliaria.InmoGestion.repositorio.PlanillaMaestroMensualRepositorio;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
@@ -22,12 +23,19 @@ public class PlanillaMaestroMensualServicio {
 
     @Transactional
     public PlanillaMaestroMensual crearPlanillaMaestro(Integer mes, Integer year, List<Contrato> contratoList){
-        PlanillaMaestroMensual planillaMaestroMensual = new PlanillaMaestroMensual();
-        planillaMaestroMensual.setMes(mes);
-        planillaMaestroMensual.setAnio(year);
-        PlanillaMaestroMensual planillaMaestro = planillaMaestroRepo.save(planillaMaestroMensual);
-        planillaDetalleMensualServicio.crearDetallesMensual(planillaMaestro, contratoList);
-        return planillaMaestro;
+        try {
+            PlanillaMaestroMensual planillaMaestroMensual = new PlanillaMaestroMensual();
+            planillaMaestroMensual.setMes(mes);
+            planillaMaestroMensual.setAnio(year);
+            PlanillaMaestroMensual planillaMaestro = planillaMaestroRepo.save(planillaMaestroMensual);
+            planillaDetalleMensualServicio.crearDetallesMensual(planillaMaestro, contratoList);
+            return planillaMaestro;
+        }catch (DataIntegrityViolationException e){
+            throw new RuntimeException("Ya existe una planilla para el mes y año especificado");
+        }catch (Exception e){
+            throw new RuntimeException("Error al general la planilla");
+        }
+
     }
 
 //    @Transactional
