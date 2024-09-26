@@ -70,6 +70,7 @@ com\inmobiliaria\InmoGestion\controlador\InquilinoControlador.class
 com\inmobiliaria\InmoGestion\Auth\AuthController.class
 com\inmobiliaria\InmoGestion\modelo\Inmueble.class
 com\inmobiliaria\InmoGestion\modelo\Propietario.class
+com\inmobiliaria\InmoGestion\controlador\PlanillaDetalleControlador.class
 com\inmobiliaria\InmoGestion\repositorio\CategoriaRepositorio.class
 com\inmobiliaria\InmoGestion\Config\AplicationConfig.class
 com\inmobiliaria\InmoGestion\InmoGestionApplication.class

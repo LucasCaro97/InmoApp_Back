@@ -119,4 +119,15 @@ public class PlanillaDetalleMensualServicio {
     }
 
 
+    public PlanillaDetalleMensual actualizarExpensas(Long id, BigDecimal valorExpesensas) {
+
+        PlanillaDetalleMensual detalle = planillaDetalleMensualRepositorio.findById(id).orElseGet(null);
+        if(detalle != null){
+            detalle.setExpensas(valorExpesensas);
+            return planillaDetalleMensualRepositorio.save(detalle);
+        }else{
+            throw new RuntimeException("Registro no encontrado");
+        }
+
+    }
 }
