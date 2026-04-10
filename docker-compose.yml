@@ -28,6 +28,7 @@ services:
       MYSQL_PASSWORD: root
       APP_ADMIN_USER: admin@gmail.com
       APP_ADMIN_PASS: secreto123
+      RUTA_IMAGENES: /opt
     ports:
       - "8085:8080"
     depends_on:
