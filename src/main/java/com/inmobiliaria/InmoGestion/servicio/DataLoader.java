@@ -25,9 +25,10 @@ public class DataLoader {
     private final PasswordEncoder passwordEncoder;
 
 
-    @Value("${username}")
+    @Value("${APP_ADMIN_USER}")
     private String username;
-    @Value("${password}")
+
+    @Value("${APP_ADMIN_PASS}")
     private String password;
 
 
