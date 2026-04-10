@@ -31,8 +31,10 @@ public class PlanillaMaestroMensualServicio {
             planillaDetalleMensualServicio.crearDetallesMensual(planillaMaestro, contratoList);
             return planillaMaestro;
         }catch (DataIntegrityViolationException e){
+            e.printStackTrace();
             throw new RuntimeException("Ya existe una planilla para el mes y año especificado");
         }catch (Exception e){
+            e.printStackTrace();
             throw new RuntimeException("Error al general la planilla");
         }
 

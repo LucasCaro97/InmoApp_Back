@@ -1,0 +1,49 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: inmogestion-api
+    restart: unless-stopped
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      TZ: America/Argentina/Buenos_Aires
+    ports:
+      - "8085:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - aserraquo-network
+
+  mysql:
+    image: mysql:8.0
+    container_name: inmogestion-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: inmogestion
+      TZ: America/Argentina/Buenos_Aires
+    ports:
+      - "3309:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -proot || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+    networks:
+      - aserraquo-network
+
+volumes:
+  mysql_data:
+
+networks:
+  aserraquo-network:
+    external: true
+
