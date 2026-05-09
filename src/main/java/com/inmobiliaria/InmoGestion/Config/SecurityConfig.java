@@ -53,7 +53,7 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.setAllowedOrigins(List.of("http://localhost:5173", "https://inmogestion-cliente.vercel.app/login"));
+        corsConfiguration.setAllowedOrigins(List.of("http://localhost:5173", "https://inmogestion-cliente.vercel.app"));
         corsConfiguration.addAllowedHeader("*");
         corsConfiguration.addAllowedMethod("*");
         corsConfiguration.setAllowCredentials(true);
